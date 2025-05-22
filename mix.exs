@@ -1,13 +1,13 @@
 defmodule LiveMotion.MixProject do
   use Mix.Project
 
-  @version "0.3.1"
+  @version "0.3.2"
 
   def project do
     [
       app: :live_motion,
       version: @version,
-      elixir: "~> 1.13",
+      elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
@@ -31,9 +31,9 @@ defmodule LiveMotion.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:phoenix, ">= 1.6.0 and < 1.8.0"},
-      {:phoenix_html, "~> 3.1"},
-      {:phoenix_live_view, "~> 0.18"},
+      {:phoenix, "~> 1.8.0-rc.0", override: true},
+      {:phoenix_html, "~> 4.1"},
+      {:phoenix_live_view, "~> 1.0"},
       {:jason, "~> 1.3", optional: true},
       {:esbuild, "~> 0.2", only: :dev},
       {:telemetry, "~> 0.4.2 or ~> 1.0"},
